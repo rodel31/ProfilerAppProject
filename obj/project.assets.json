@@ -297,11 +297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\SampleApp\\SampleApp.csproj",
+      "projectUniqueName": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\SampleApp.csproj",
       "projectName": "SampleApp",
-      "projectPath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\SampleApp\\SampleApp.csproj",
+      "projectPath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\SampleApp.csproj",
       "packagesPath": "C:\\Users\\TCLASS_Rod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\SampleApp\\obj\\",
+      "outputPath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZpTeUvyuRec=",
+  "dgSpecHash": "wIzMPdKvyHI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\SampleApp\\SampleApp.csproj",
+  "projectFilePath": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\SampleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TCLASS_Rod\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\TCLASS_Rod\\.nuget\\packages\\google.protobuf\\3.32.0\\google.protobuf.3.32.0.nupkg.sha512",
