@@ -9,6 +9,7 @@ namespace SampleApp
         public frmProfile()
         {
             InitializeComponent();
+            //LoadData();
         }
         private void LoadData()
         {
@@ -24,6 +25,7 @@ namespace SampleApp
             rtbAddress.Text = string.Empty;
             lblStatus.Text = string.Empty;
             btnEdit.Text = "Edit";
+            btnSave.Text = "New";
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -33,21 +35,30 @@ namespace SampleApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO Users (LastName, FirstName, MiddleName, Contact, Address) " +
+            if (btnSave.Text == "New")
+            {
+                pInfo.Enabled = true;
+                btnSave.Text = "Save";
+            }
+            else
+            {
+                string query = "INSERT INTO Users (LastName, FirstName, MiddleName, Contact, Address) " +
                    "VALUES (@ln, @fn, @mn, @con, @addr)";
 
-            MySqlParameter[] ps = {
-                new MySqlParameter("@ln", txtLname.Text),
-                new MySqlParameter("@fn", txtFname.Text),
-                new MySqlParameter("@mn", txtMname.Text),
-                new MySqlParameter("@con", txtContact.Text),
-                new MySqlParameter("@addr", rtbAddress.Text)
-            };
+                MySqlParameter[] ps = {
+                    new MySqlParameter("@ln", txtLname.Text),
+                    new MySqlParameter("@fn", txtFname.Text),
+                    new MySqlParameter("@mn", txtMname.Text),
+                    new MySqlParameter("@con", txtContact.Text),
+                    new MySqlParameter("@addr", rtbAddress.Text)
+                };
 
-            new DatabaseHelper().ExecuteQuery(query, ps);
-            MessageBox.Show("Profile Saved!");
-            LoadData();
-            Reset();
+                new DatabaseHelper().ExecuteQuery(query, ps);
+                MessageBox.Show("Profile Saved!");
+                LoadData();
+                Reset();
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,9 +99,67 @@ namespace SampleApp
             }
             else
             {
+                if (selectedProfileID == 0)
+                {
+                    MessageBox.Show("Please select a profile from the list first.");
+                    return;
+                }
 
+                string query = "UPDATE Users SET LastName=@ln, FirstName=@fn, MiddleName=@mn, " +
+                               "Contact=@con, Address=@addr WHERE ID=@id";
+
+                MySqlParameter[] ps = {
+                    new MySqlParameter("@ln", txtLname.Text),
+                    new MySqlParameter("@fn", txtFname.Text),
+                    new MySqlParameter("@mn", txtMname.Text),
+                    new MySqlParameter("@con", txtContact.Text),
+                    new MySqlParameter("@addr", rtbAddress.Text),
+                    new MySqlParameter("@id", selectedProfileID)
+                };
+
+                new DatabaseHelper().ExecuteQuery(query, ps);
+                MessageBox.Show("Profile Updated Successfully!");
+                LoadData(); // Refresh the grid
+                Reset();
             }
-            
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedProfileID == 0) return;
+
+            DialogResult dialog = MessageBox.Show("Are you sure you want to delete this profile?",
+                "Delete Confirmation", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                string query = "DELETE FROM Users WHERE ID=@id";
+                MySqlParameter[] ps = { new MySqlParameter("@id", selectedProfileID) };
+
+                new DatabaseHelper().ExecuteQuery(query, ps);
+                MessageBox.Show("Profile Deleted.");
+
+                Reset(); // Helper to empty textboxes
+                LoadData();    // Refresh the grid
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseHelper db = new DatabaseHelper();
+
+            // If the box is empty, load the full list
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                dgvData.DataSource = db.GetProfiles();
+            }
+            else
+            {
+                // Otherwise, call our new search method
+                dgvData.DataSource = db.SearchByLastName(txtSearch.Text);
+            }
         }
     }
+    
 }

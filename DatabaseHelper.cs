@@ -32,4 +32,21 @@ public class DatabaseHelper
             }
         }
     }
+    public DataTable SearchByLastName(string lastName)
+    {
+        using (MySqlConnection conn = new MySqlConnection(connString))
+        {
+            // We use the LIKE operator and the '%' wildcard for partial matches
+            string query = "SELECT * FROM Users WHERE LastName LIKE @ln";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            // This finds any Last Name starting with the input (Example, "S" -> "Smith")
+            cmd.Parameters.AddWithValue("@ln", lastName + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+    }
 }
