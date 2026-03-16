@@ -26,6 +26,7 @@ namespace SampleApp
             lblStatus.Text = string.Empty;
             btnEdit.Text = "Edit";
             btnSave.Text = "New";
+            pInfo.Enabled = false;
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -89,6 +90,7 @@ namespace SampleApp
                     // 5. Visual cue: Let the user know they are in 'Edit Mode'
                     lblStatus.Text = "Editing Profile ID: " + selectedProfileID;
                     btnEdit.Text = "Update Changes"; // Change the Save button text
+                    pInfo.Enabled = true;
                 }
                 else
                 {

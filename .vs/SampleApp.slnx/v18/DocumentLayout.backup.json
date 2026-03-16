@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAwwAsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwCkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T07:23:41.052Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "DatabaseHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T07:00:56.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T07:00:56.852Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "ToolTip": "C:\\Users\\TCLASS_Rod\\Desktop\\CsharpSample\\Projects\\ProfilerAppProject\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T06:58:21.178Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-03-12T06:58:21.178Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAYwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T06:57:18.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T06:57:18.972Z"
             }
           ]
         }
